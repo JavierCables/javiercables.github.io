@@ -9,7 +9,7 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
     <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon" />
 
     <!--=============== BOXICONS ===============-->
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    <div id="particles-js"></div>
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -79,7 +80,7 @@
             </div>
 
             <!-- Theme change button -->
-            <i class="bx bx-moon change-theme" id="theme-button"></i>
+            <i class="bx bx-moon change-theme" id="theme-button" onclick="changeModel(), changeLogo()"></i>
         </nav>
     </header>
 
@@ -101,9 +102,9 @@
                     </div>
                 </div>
 
-                <div class="home__model">
+                <div id="model" class="home__model">
                     <div>
-                        <model-viewer alt="Lowpoly cherry tree" src="assets/model/cherry.gltf" ar ar-modes="webxr scene-viewer quick-look" poster="assets/model/cherry.gltf" disable-zoom auto-rotate shadow-intensity="1" camera-controls enable-pan></model-viewer>
+                        <model-viewer id="modelviewer" alt="Lowpoly cherry tree" src="assets/model/cherryn.gltf" ar ar-modes="webxr scene-viewer quick-look" poster="assets/model/cherry.gltf" disable-zoom auto-rotate shadow-intensity="1" camera-controls enable-pan></model-viewer>
                     </div>
                 </div>
 
@@ -132,7 +133,7 @@
             <h2 id="about__title" class="section__title">About Me</h2>
 
             <div class="about__container container grid">
-                <img src="assets/img/logo.gif" alt="" class="about__img" />
+                <img src="assets/img/logo/logon.png" alt="" id="logo-img" class="about__img"/>
 
                 <div class="about__data">
                     <div class="about__info">
@@ -876,6 +877,137 @@
             }
         }
     </script>
+
+<script>
+    const models = ['cherry.gltf', 'cherryn.gltf'];
+    const toggleModel = document.querySelector('#modelviewer');
+    const logos = ['logo.png', 'logon.png'];
+    const toggleLogo = document.querySelector('#logo-img');
+    let j = 0;
+    let i = 0;
+    function changeModel(){
+        toggleModel.setAttribute("src", "assets/model/" + models[j++ % 2]);
+    }
+    function changeLogo(){
+        toggleLogo.setAttribute("src", "assets/img/logo/" + logos[i++ % 2]);
+    }
+</script>
+
+<script src="assets/js/particles.min.js"></script>
+<script id="particles">
+    particlesJS(
+        {
+  "particles": {
+    "number": {
+      "value": 160,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#a497b4"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 1,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 1,
+        "opacity_min": 0,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 2,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 4,
+        "size_min": 0.3,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 0.05,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 600
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 250,
+        "size": 0,
+        "duration": 2,
+        "opacity": 0,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 400,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+} 
+    )
+</script>
 
 </body>
 

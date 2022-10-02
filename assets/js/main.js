@@ -14,7 +14,14 @@ function leftClick(){
 }
 
 function rightClick(){
-    btn.style.left = "100px";
+    //Aplico el margen
+    var textStyle = btn.offsetWidth + "px";
+    console.log("textStyle: " + textStyle);
+    console.log("btn.style.left: " + btn.style.left);
+    
+    
+    btn.style.left = "" + textStyle;
+    console.log("btn.style.left: " + btn.style.left);
 }
 
 /*=============== QUALIFICATION TABS ===============*/

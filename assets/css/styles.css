@@ -19,6 +19,7 @@
   --text-color: hsl(var(--second-hue), 8%, 75%);
   --text-color-light: hsl(var(--second-hue), 4%, 55%);
   --body-color: hsl(225, 17%, 15%);
+  --light-body-color: hsl(226, 17%, 24%);
   --container-color: hsl(225, 17%, 25%);
   --button-color: hsl(220, 15%, 20%);
 
@@ -77,7 +78,7 @@ textarea {
 }
 
 body {
-  background-color: var(--body-color);
+  background: radial-gradient(#333848, #191C24);
   color: var(--text-color);
   transition: .4s; /* for light mode animation */
 }
@@ -120,21 +121,27 @@ img {
 /*========== Variables Light theme ==========*/
 body.light-theme{
   --first-hue: 354;
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 59%); /* -4% */
   --sat: 45%;
   --lig: 55%;
   --first-color: hsl(354, 45%, 55%);  
   --title-color: hsl(3, 23%, 32%);
   --text-color: hsl(210, 3%, 15%);
   --body-color: hsl(28, 41%, 92%);
+  --light-body-color: hsl(28, 41%, 92%);
   --container-color: hsl(28, 41%, 87%);
   --button-color: hsl(28, 41%, 92%);
-  
+  background: radial-gradient(#F3EAE2, #F3EAE2);
 }
 
 /*========== 
     Color changes in some parts of 
     the website, in light theme
 ==========*/
+.light-theme #particles-js{
+  width: 0%;
+}
+
 .light-theme .scroll-header{
   box-shadow: 0 2px 4px hsla(0, 0%, 1%, 1);
 }
@@ -159,6 +166,7 @@ body.light-theme{
 }
 
 .light-theme .home__social-link{
+
   box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
 }
 
@@ -184,8 +192,17 @@ body.light-theme{
   color: var(--button-color);
 }
 
+.light-theme .footer__social-link{
+  background-color: var(--body-color);
+}
+
 .light-theme .about__box{
   box-sizing: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
+}
+
+.light-theme .about__box, .light-theme .skills__content, .light-theme .portfolio__img, .light-theme .contact__card{
+  box-shadow: 3px 3px 10px hsla(0, 0%, 80%, 1); 
+  transition: .4s;
 }
 
 .light-theme .skills__content,
@@ -203,6 +220,15 @@ body.light-theme{
 
 .light-theme::-webkit-scrollbar-thumb:hover{
   background-color: hsl(var(--second-hue), 8%, 44%);
+}
+
+.light-theme .button:hover{
+  background-color: var(--first-color-alt);
+  color: var(--body-color);
+}
+
+.light-theme .footer{
+  background: linear-gradient(0deg, rgba(75,49,47,1) 0%, rgba(100,65,63,1) 35%, rgba(125,81,79,1) 100%);
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -243,6 +269,13 @@ body.light-theme{
 }
 
 /*=============== HEADER & NAV===============*/
+#particles-js{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
 .header{
   position: fixed;
   top: 0;
@@ -262,7 +295,6 @@ body.light-theme{
 
 .nav__logo{
   position: relative;
-  right: 90px;
   color: var(--first-color);
   font-weight: var(--font-medium);
   transition: .4s;
@@ -483,14 +515,7 @@ model-viewer{
 }
 
 .about__img{
-  width: 220px;
   justify-self: center;
-}
-
-.about__logo{
-  text-align: center;
-  width: 300px;
-  height: 300px;
 }
 
 .about__data{
@@ -509,6 +534,7 @@ model-viewer{
   border-radius: .75rem;
   padding: .75rem .5rem;
   transition: .4s;
+  box-shadow: 3px 3px 10px hsla(0, 0%, 10%, 1); 
 }
 
 .about__icon{
@@ -546,6 +572,7 @@ model-viewer{
   padding: 1.5rem;
   border-radius: 1.25rem;
   transition: .4s;
+  box-shadow: 3px 3px 10px hsla(0, 0%, 10%, 1);   
 }
 
 .skills__title{
@@ -559,6 +586,7 @@ model-viewer{
 .skills__box{
   display: flex;
   justify-content: center;
+  transition: .4s;
   column-gap: 2.5rem;
 }
 
@@ -627,7 +655,7 @@ model-viewer{
 .qualification__subtitle{
   display: inline-block;
   font-size: var(--small-font-size);
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .qualification__calendar{
@@ -653,14 +681,17 @@ model-viewer{
 
 .qualification [data-content]{
   display: none;
+  /*background-color: pink;*/
 }
 
 .qualification__active[data-content]{
   display: block;
+  /*background-color: orange;*/
 }
 
 .qualification__button.qualification__active{
   color: var(--first-color);
+  transition: .4s;
 }
 
 /*=============== PORTFOLIO ===============*/
@@ -677,6 +708,8 @@ model-viewer{
   width: 265px;
   border-radius: 0.5rem;
   justify-self: center;
+  transition: .4s;
+  box-shadow: 3px 3px 10px hsla(0, 0%, 10%, 1); 
 }
 
 .portfolio__title{
@@ -759,6 +792,7 @@ model-viewer{
   border-radius: .75rem;
   text-align: center;
   transition: .4s;
+  box-shadow: 3px 3px 10px hsla(0, 0%, 10%, 1); 
 }
 
 .contact__card-icon{
@@ -847,7 +881,7 @@ model-viewer{
 }
 /*=============== FOOTER ===============*/
 .footer{
-  background-color: var(--first-color);
+  background: linear-gradient(0deg, rgba(151,137,169,1) 0%, rgba(164,151,180,1) 35%, rgba(193,184,204,1) 100%);
 }
 
 .footer__container{
@@ -879,7 +913,7 @@ model-viewer{
 
 .footer__social-link{
   background-color: var(--body-color);
-  color: var(--first-color);
+  color: var(--title-color);
   padding: .25rem;
   border-radius: .25rem;
   font-size: 1rem;
@@ -919,8 +953,8 @@ model-viewer{
   }
 
   .nav__logo{
-    left: 5px;
-    right: 10px;
+    position: absolute;
+    left: 42%;
   }
 
   .button-box{
@@ -958,6 +992,10 @@ model-viewer{
   }
 
   /* SKILLS */
+  .skills__content{
+    margin: 0px 20px;
+  }
+
   .skills__box{
     column-gap: 1rem;
   }
@@ -1014,11 +1052,19 @@ model-viewer{
     margin: 0 auto;
   }
 
+  .skills__content{
+    margin: 0px 20px;
+  }
+
   .portfolio__content{
     height: 550px;
   }
 }
 @media screen and (min-width: 390px){
+  .skills__content{
+    margin: 0px 20px;
+  }
+
   .portfolio__content{
     height: 450px;
   }
