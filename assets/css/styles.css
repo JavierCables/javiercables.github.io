@@ -977,9 +977,6 @@ model-viewer{
    }
 
   /* HOME */
-  .home__buttons{
-    flex-direction: column;
-  }
   .home__handle{
     width: 150px;
     height: 253px;
@@ -1059,9 +1056,6 @@ model-viewer{
    }
 
   /* HOME */
-  .home__buttons{
-    flex-direction: column;
-  }
   .home__handle{
     width: 150px;
     height: 253px;
@@ -1109,6 +1103,12 @@ model-viewer{
     width: 200px;
     height: 250px;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .home__buttons{
+    flex-direction: column;
   }
 }
 
