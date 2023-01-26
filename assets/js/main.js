@@ -102,6 +102,11 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx bx-
   themeButton.classList[selectedIcon === 'bx bx-moon' ? 'add' : 'remove'](iconTheme)
 }*/
 
+document.body.classList.toggle(lightTheme)
+themeButton.classList.toggle(iconTheme)
+localStorage.setItem('selected-theme', getCurrentTheme())
+localStorage.setItem('selected-icon', getCurrentIcon())
+
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
     // Add or remove the light / icon theme
