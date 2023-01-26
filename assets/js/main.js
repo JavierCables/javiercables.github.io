@@ -106,6 +106,10 @@ document.body.classList.toggle(lightTheme)
 themeButton.classList.toggle(iconTheme)
 localStorage.setItem('selected-theme', getCurrentTheme())
 localStorage.setItem('selected-icon', getCurrentIcon())
+if(lightTheme == "dark")
+{
+    changeDayNight();
+}
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
