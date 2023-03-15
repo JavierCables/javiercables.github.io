@@ -1419,8 +1419,8 @@ model-viewer{
   }
 
   model-viewer{
-    width: 500px;
-    height: 600px;
+    width: 600px;
+    height: 500px;
     margin: 0 auto;
   }
 }

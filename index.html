@@ -104,7 +104,8 @@
 
                 <div id="model" class="home__model">
                     <div>
-                        <model-viewer id="modelviewer" alt="Lowpoly cherry tree" src="assets/model/cherry.gltf" ar ar-modes="webxr scene-viewer quick-look" poster="assets/model/cherry.gltf" disable-zoom auto-rotate shadow-intensity="1" camera-controls enable-pan></model-viewer>
+                        <model-viewer id="modelviewer" alt="Mars" src="Mars (3).gltf" ar ar-modes="webxr scene-viewer quick-look" poster="poster.webp" disable-zoom camera-controls enable-pan shadow-intensity="1" exposure="0.3" shadow-softness="0.61" environment-image="music_hall_01_1k.hdr" auto-rotate min-camera-orbit="auto 63deg 1059m" min-field-of-view="30deg" max-camera-orbit="auto 63deg auto"> </model-viewer>
+                        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
                     </div>
                 </div>
 
@@ -879,7 +880,7 @@
     </script>
 
 <script> 
-    const models = ['cherryn.gltf', 'cherry.gltf'];
+    const models = ['cherryn.gltf', 'Mars (3).gltf'];
     const toggleModel = document.querySelector('#modelviewer');
     const logos = ['logon.png', 'logo.png'];
     const toggleLogo = document.querySelector('#logo-img');

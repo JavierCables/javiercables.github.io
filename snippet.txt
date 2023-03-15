@@ -1,0 +1,1 @@
+<model-viewer src="Mars (3).gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" exposure="0.3" shadow-softness="0.61" environment-image="music_hall_01_1k.hdr" auto-rotate min-camera-orbit="auto 63deg 1059m" max-camera-orbit="auto 63deg auto" min-field-of-view="30deg"> </model-viewer>
