@@ -18,7 +18,7 @@
   --title-color: hsl(var(--second-hue), 16% , 65%);
   --text-color: hsl(var(--second-hue), 8%, 75%);
   --text-color-light: hsl(var(--second-hue), 4%, 55%);
-  --body-color: hsl(225, 17%, 15%);
+  --body-color: hsl(225, 17%, 15%); 
   --light-body-color: hsl(226, 17%, 24%);
   --container-color: hsl(225, 17%, 25%);
   --button-color: hsl(220, 15%, 20%);
