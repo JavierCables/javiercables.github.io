@@ -24,6 +24,17 @@ function rightClick(){
     console.log("btn.style.left: " + btn.style.left);
 }
 
+/*=============== CONTACT ===============*/
+/*const nameInput = document.querySelector("contact__tag1");
+const email = document.querySelector("contact__tag2");
+const message = document.querySelector("contact__tag3");
+const success = document.querySelector("");
+const errorNodes = document.querySelectorAll(".error");
+
+function validateForm() {
+
+}*/
+
 /*=============== QUALIFICATION TABS ===============*/
 const tabs = document.querySelectorAll('[data-target]'),
     tabContents = document.querySelectorAll('[data-content]')
