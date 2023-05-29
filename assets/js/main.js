@@ -25,15 +25,41 @@ function rightClick(){
 }
 
 /*=============== CONTACT ===============*/
-/*const nameInput = document.querySelector("contact__tag1");
-const email = document.querySelector("contact__tag2");
-const message = document.querySelector("contact__tag3");
-const success = document.querySelector("");
-const errorNodes = document.querySelectorAll(".error");
+const contactForm = document.getElementById('contact_form'),
+    contactName = document.getElementById('contact_name'),
+    contactEmail = document.getElementById('contact_email'),
+    contactContent = document.getElementById('contact_content'),
+    contactMessage = document.getElementById('contact_message')
 
-function validateForm() {
+const sendEmail = (e) =>{
+    e.preventDefault()
 
-}*/
+    if(contactName.value === '' || contactEmail.value === '' || contactContent.value === ''){
+        contactMessage.classList.remove('color-brown')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'Write all the input fields'
+    } else {
+        // serviceID - templateID - #form - publicKey
+        emailjs.sendForm('service_nnynubu', 'template_dum4lqm', '#contact_form', '2zowwh09_jfVpnJh3')
+            .then(() =>{
+                contactMessage.classList.add('color-brown')
+                contactMessage.textContent = 'Message sent!'
+
+                setTimeout(() =>{
+                    contactMessage.textContent = ''
+                }, 5000)
+            }, (error) =>{
+                alert('Something has failed...', error)
+            })
+
+        contactName.value = ''
+        contactEmail.value = ''
+        contactContent.value = ''
+    }
+}
+contactForm.addEventListener('submit', sendEmail)
+
 
 /*=============== QUALIFICATION TABS ===============*/
 const tabs = document.querySelectorAll('[data-target]'),

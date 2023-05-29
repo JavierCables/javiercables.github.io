@@ -106,8 +106,7 @@
 
                 <div id="model" class="home__model">
                     <div>
-                        <model-viewer id="modelviewer" alt="Mars" src="assets/model/Mars (3).gltf" ar ar-modes="webxr scene-viewer quick-look" poster="poster.webp" disable-zoom camera-controls enable-pan shadow-intensity="1" exposure="0.25" shadow-softness="0.61" environment-image="legacy" auto-rotate min-camera-orbit="auto 63deg 1059m" min-field-of-view="30deg" max-camera-orbit="auto 63deg auto"> </model-viewer>
-                        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+                        <model-viewer id="modelviewer" alt="Mars" src="assets/model/Mars (3).gltf" ar ar-modes="webxr scene-viewer quick-look" disable-zoom camera-controls enable-pan shadow-intensity="1" exposure="0.25" shadow-softness="0.61" environment-image="legacy" auto-rotate min-camera-orbit="auto 63deg 1059m" min-field-of-view="30deg" max-camera-orbit="auto 63deg auto"> </model-viewer>
                     </div>
                 </div>
 
@@ -605,23 +604,25 @@ asdasdsadasda
                 <div class="contact__content">
                     <h3 id="contact__title2" class="contact__title">Write me a mail</h3>
 
-                    <form action="" class="contact__form">
+                    <form action="" class="contact__form" id="contact_form">
                         <div class="contact__form-div">
-                            <label id="contact__tag1" for="" class="contact__form-tag">Name</label>
-                            <input type="text" placeholder="Insert your name" class="contact__form-input" />
+                            <label id="contact__tag1" class="contact__form-tag">Name</label>
+                            <input type="text" id="contact_name" name="user_name" placeholder="Insert your name" class="contact__form-input" />
                         </div>
 
                         <div class="contact__form-div">
-                            <label id="contact__tag2" for="" class="contact__form-tag">Mail</label>
-                            <input type="email" placeholder="Insert your email" class="contact__form-input" />
+                            <label id="contact__tag2" class="contact__form-tag">Mail</label>
+                            <input type="email" id="contact_email" name="user_email" placeholder="Insert your email" class="contact__form-input" />
                         </div>
 
                         <div class="contact__form-div contact__form-area">
-                            <label id="contact__tag3" for="" class="contact__form-tag">Content</label>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Write your message" class="contact__form-input"></textarea>
+                            <label id="contact__tag3" class="contact__form-tag">Content</label>
+                            <textarea name="user_content" id="contact_content" cols="30" rows="10" placeholder="Write your message" class="contact__form-input"></textarea>
                         </div>
 
-                        <button id="contact__button2" onclick="" class="button">Send Message</button>
+                        <p class="contact__message" id="contact_message"></p>
+
+                        <button id="contact__button2" type="submit" class="button">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -680,6 +681,9 @@ asdasdsadasda
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <!--=============== EMAIL JS ===============-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!--=============== LANGUAGE ===============-->
     <script>

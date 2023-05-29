@@ -816,6 +816,21 @@ model-viewer{
   margin-bottom: .75rem;
 }
 
+.contact__message{
+  font-size: var(--small-font-size);
+  position: relative;
+  bottom: 1.8rem;
+  left: 1.5rem;
+}
+
+.color-red{
+  color: hsl(354, 45%, 55%);
+}
+
+.color-brown{
+  color: hsl(3, 23%, 32%);
+}
+
 .contact__button{
   color: var(--first-color);
   font-size: var(--small-font-size);
