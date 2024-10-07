@@ -298,6 +298,8 @@ body.light-theme{
   color: var(--first-color);
   font-weight: var(--font-medium);
   width: 5%;
+  min-width: 35px;
+  max-width: 60px;
   transition: .4s;
 }
 
@@ -971,7 +973,7 @@ model-viewer{
 
   .nav__logo{
     position: absolute;
-    left: 48%;
+    left: 48.75%;
   }
 
   .button-box{
@@ -1050,7 +1052,7 @@ model-viewer{
 
   .nav__logo{
     position: absolute;
-    left: 48%;
+    left: 48.75%;
   }
 
   .button-box{
@@ -1388,6 +1390,11 @@ model-viewer{
     text-align: center;
     padding: 1rem 1.25rem;
   }
+
+  .about__title{
+    font-size: .799rem
+  }
+
   .about__description{
     padding: 0 0rem; 
     margin-bottom: 2.5rem;
@@ -1437,17 +1444,5 @@ model-viewer{
     width: 600px;
     height: 500px;
     margin: 0 auto;
-  }
-}
-
-@media screen and (min-width: 1200px){
-  .nav__logo{
-    padding: 5px 5px;
-  }
-}
-
-@media screen and (min-width: 1400px){
-  .nav__logo{
-    padding: 10px 10px;
   }
 }
