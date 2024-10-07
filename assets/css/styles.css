@@ -155,10 +155,7 @@ body.light-theme{
 }
 
 .light-theme #btn{
-  background: linear-gradient(180deg,
-             hsla(var(--first-hue), var(--sat), var(--lig), 1),
-             hsla(var(--first-hue), var(--sat), var(--lig), .2)
-            );
+  background: var(--first-color);
 }
 
 .light-theme .section__subtitle{
@@ -333,10 +330,7 @@ body.light-theme{
   position: absolute;
   width: 100px;
   height: 30px;
-  background: linear-gradient(180deg,
-                hsla(var(--first-hue), var(--sat), var(--lig), 1),
-                hsla(var(--first-hue), var(--sat), var(--lig), .2)
-            );
+  background: var(--first-color);
   border-radius: 30px;
   transition: .5s;
 }
